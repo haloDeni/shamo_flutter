@@ -3,7 +3,7 @@ import 'package:shamo_apps/pages/home.dart/main_page.dart';
 import 'package:shamo_apps/pages/signin_page.dart';
 import 'package:shamo_apps/pages/signup_page.dart';
 import 'package:shamo_apps/pages/splash_page.dart';
-import 'package:shamo_apps/theme.dart';
+// import 'package:shamo_apps/theme.dart';
 
 void main() {
   runApp(MyApp());
