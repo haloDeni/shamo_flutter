@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shamo_apps/theme.dart';
 import 'package:shamo_apps/widget/product_card.dart';
+import 'package:shamo_apps/widget/product_tile.dart';
 // import 'package:shamo_apps/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -168,10 +169,62 @@ class HomePage extends StatelessWidget {
                 width: defaultMargin,
               ),
               Row(
-                children: [Productcard(), Productcard(), Productcard()],
+                children: [
+                  Productcard(),
+                  Productcard(
+                    imageUrl: 'assets/products/image_59.png',
+                    nameProduct: 'Duramo 2.1',
+                    categories: 'Training',
+                    // imageUrl: 'assets/images/sepatu_running_3.png',
+                    price: '\$30.00',
+                  ),
+                  Productcard(
+                    imageUrl: 'assets/products/sepatu_running_3.png',
+                    nameProduct: 'Active 99',
+                    categories: 'Training',
+                    price: '\$50.00',
+                  )
+                ],
               )
             ],
           ),
+        ),
+      );
+    }
+
+    Widget newArrivalsTitle() {
+      return Container(
+        margin: EdgeInsets.only(
+            top: defaultMargin, left: defaultMargin, right: defaultMargin),
+        child: Text(
+          'New Arrivals',
+          style: primaryTextStyle.copyWith(
+            fontSize: 22,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget newArrivals() {
+      return Container(
+        margin: EdgeInsets.only(top: 14),
+        child: Column(
+          children: [
+            ProductTile(),
+            ProductTile(
+              imageUrl: 'assets/products/image_51.png',
+              nameProducts: 'Pro Boost Low Shoes',
+              categories: 'Basketball',
+              price: '\$99.00',
+            ),
+            ProductTile(
+              imageUrl: 'assets/products/image_23.png',
+              categories: 'Runing',
+              nameProducts: 'Go Arround',
+              price: '\$89.00',
+            ),
+          ],
         ),
       );
     }
@@ -181,7 +234,9 @@ class HomePage extends StatelessWidget {
         header(),
         categories(),
         popularProductsTitle(),
-        popularProducts()
+        popularProducts(),
+        newArrivalsTitle(),
+        newArrivals()
       ],
     );
   }

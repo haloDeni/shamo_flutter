@@ -13,6 +13,7 @@ Color primaryTextColor = Color(0xffE1E1E1);
 Color secondaryTextColor = Color(0xff999999);
 Color subtittleColor = Color(0xff504F5E);
 Color transparentColor = Colors.transparent;
+Color titleColorProduct = Color(0xff2E2E2E);
 
 TextStyle primaryTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
@@ -28,6 +29,9 @@ TextStyle subtittleText = GoogleFonts.poppins(
 );
 TextStyle purpleText = GoogleFonts.poppins(
   color: primaryColor,
+);
+TextStyle titleProduct = GoogleFonts.poppins(
+  color: titleColorProduct,
 );
 
 FontWeight light = FontWeight.w300;
