@@ -230,6 +230,7 @@ class HomePage extends StatelessWidget {
     }
 
     return ListView(
+      addAutomaticKeepAlives: false,
       children: [
         header(),
         categories(),

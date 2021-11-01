@@ -94,12 +94,14 @@ class Chatpage extends StatelessWidget {
           children: [
             ChatTile(),
             ChatTile(
+              imageUrl: 'assets/logoProducts/adidas.png',
               merchant: 'Adidas Indonesia',
               massage: 'Hai, Your colors is not found for our product',
               unread: false,
               time: 'yesterday',
             ),
             ChatTile(
+              imageUrl:'assets/logoProducts/puma.png',
               merchant: 'Puma Indonesia',
               massage: 'Hai, This Product already',
             )
