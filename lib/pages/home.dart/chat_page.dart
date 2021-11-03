@@ -92,7 +92,11 @@ class Chatpage extends StatelessWidget {
             horizontal: defaultMargin,
           ),
           children: [
-            ChatTile(),
+            GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/detail-chat');
+                },
+                child: ChatTile()),
             ChatTile(
               imageUrl: 'assets/logoProducts/adidas.png',
               merchant: 'Adidas Indonesia',
@@ -101,7 +105,7 @@ class Chatpage extends StatelessWidget {
               time: 'yesterday',
             ),
             ChatTile(
-              imageUrl:'assets/logoProducts/puma.png',
+              imageUrl: 'assets/logoProducts/puma.png',
               merchant: 'Puma Indonesia',
               massage: 'Hai, This Product already',
             )

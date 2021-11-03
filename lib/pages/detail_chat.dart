@@ -62,45 +62,49 @@ class DetailChatPage extends StatelessWidget {
   Widget chatInput() {
     return Container(
       margin: EdgeInsets.all(20),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          productPreview(),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  height: 45,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16,
-                  ),
-                  decoration: BoxDecoration(
-                      color: bgColor1, borderRadius: BorderRadius.circular(12)),
-                  child: Center(
-                    child: TextFormField(
-                      decoration: InputDecoration.collapsed(
-                        hintText: 'Typle Message...',
-                        hintStyle: subtittleText.copyWith(
-                          fontSize: 14,
-                          fontWeight: reguler,
+      child: SingleChildScrollView(
+        reverse: true,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            productPreview(),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 45,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16,
+                    ),
+                    decoration: BoxDecoration(
+                        color: bgColor1,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Center(
+                      child: TextFormField(
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Typle Message...',
+                          hintStyle: subtittleText.copyWith(
+                            fontSize: 14,
+                            fontWeight: reguler,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Image.asset(
-                'assets/images/send_button.png',
-                width: 45,
-                height: 45,
-              )
-            ],
-          ),
-        ],
+                SizedBox(
+                  width: 10,
+                ),
+                Image.asset(
+                  'assets/images/send_button.png',
+                  width: 45,
+                  height: 45,
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -112,6 +116,7 @@ class DetailChatPage extends StatelessWidget {
         ChatBuble(
           text: 'Hi, This item is still available?',
           isSender: true,
+          hasProduct: true,
         ),
         ChatBuble(
           text: 'Hai thankyou for your massage, your order already',

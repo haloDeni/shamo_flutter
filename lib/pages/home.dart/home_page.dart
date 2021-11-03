@@ -170,7 +170,11 @@ class HomePage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Productcard(),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/detail-product');
+                      },
+                      child: Productcard()),
                   Productcard(
                     imageUrl: 'assets/products/image_59.png',
                     nameProduct: 'Duramo 2.1',
