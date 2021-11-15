@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shamo_apps/models/user_models.dart';
+import 'package:shamo_apps/providers/auth_providers.dart';
 import 'package:shamo_apps/theme.dart';
 import 'package:shamo_apps/widget/appbar_no_image.dart';
 
@@ -7,20 +10,69 @@ class EditProfil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget input(String title, String name) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+
+    Widget inputName() {
       return Container(
         margin: EdgeInsets.only(top: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              title,
+              'Name',
               style: secondaryTextStyle.copyWith(fontSize: 13),
             ),
             TextFormField(
               style: primaryTextStyle,
               decoration: InputDecoration(
-                  hintText: name,
+                  hintText: '${user.name}',
+                  hintStyle: primaryTextStyle.copyWith(fontSize: 16),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: subtittleColor))),
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget inputUsername() {
+      return Container(
+        margin: EdgeInsets.only(top: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Username',
+              style: secondaryTextStyle.copyWith(fontSize: 13),
+            ),
+            TextFormField(
+              style: primaryTextStyle,
+              decoration: InputDecoration(
+                  hintText: '${user.username}',
+                  hintStyle: primaryTextStyle.copyWith(fontSize: 16),
+                  enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: subtittleColor))),
+            )
+          ],
+        ),
+      );
+    }
+
+    Widget inputEmail() {
+      return Container(
+        margin: EdgeInsets.only(top: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Email',
+              style: secondaryTextStyle.copyWith(fontSize: 13),
+            ),
+            TextFormField(
+              style: primaryTextStyle,
+              decoration: InputDecoration(
+                  hintText: '${user.email}',
                   hintStyle: primaryTextStyle.copyWith(fontSize: 16),
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: subtittleColor))),
@@ -44,13 +96,16 @@ class EditProfil extends StatelessWidget {
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/logoqu.png'))),
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: NetworkImage('${user.profilePhothoUrl}'),
+                  ),
+                ),
               ),
-              input('Name', 'Deni Nuryadi'),
-              input('Username', '@hello_deniNuryadi'),
-              input('Email Address', 'deninuryadi63@gmail.com'),
+              inputName(),
+              inputUsername(),
+              inputEmail(),
             ],
           ),
         ),

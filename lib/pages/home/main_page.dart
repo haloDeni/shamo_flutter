@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shamo_apps/pages/home.dart/cart_page.dart';
-import 'package:shamo_apps/pages/home.dart/chat_page.dart';
-import 'package:shamo_apps/pages/home.dart/home_page.dart';
-import 'package:shamo_apps/pages/home.dart/profile_page.dart';
-import 'package:shamo_apps/pages/home.dart/whistlist_page.dart';
+import 'package:shamo_apps/pages/home/cart_page.dart';
+import 'package:shamo_apps/pages/home/chat_page.dart';
+import 'package:shamo_apps/pages/home/home_page.dart';
+import 'package:shamo_apps/pages/home/profile_page.dart';
+import 'package:shamo_apps/pages/home/whistlist_page.dart';
 import 'package:shamo_apps/theme.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 // import 'package:google_fonts/google_fonts.dart';
